@@ -8,7 +8,8 @@ const { merge } = require('webpack-merge');
 // const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
-
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const chalk = require('chalk');
 const commonConfig = require('./webpack-common.config');
 
 // const smp = new SpeedMeasurePlugin();
@@ -66,7 +67,15 @@ const MainConfig = {
                 canPrint: true
             })
         ]
-    }
+    },
+	plugins: [
+		// 打包进度
+		new ProgressBarPlugin({
+			format: `progress: [:bar${chalk.green.bold(':percent')}] (:elapsed seconds) :msg`,
+			clear: false,
+			width: 60
+		}),
+	]
 };
 
 // smp.wrap loader所用打包时间

@@ -10,8 +10,6 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const chalk = require('chalk');
 const HappyPack = require('happypack');
 // const cdnVersion = require('./cdn-version.json');
 const resolve = dir => path.resolve(__dirname, dir);
@@ -172,13 +170,6 @@ module.exports = () => {
                 ignoreOrder: true,
                 filename: '[name].css',
                 chunkFilename: '[name]_[hash:6].css'
-            }),
-
-            // 打包进度
-            new ProgressBarPlugin({
-                format: `progress: [:bar${chalk.green.bold(':percent')}] (:elapsed seconds) :msg`,
-                clear: false,
-                width: 60
             }),
 
             // moment插件优化打包
