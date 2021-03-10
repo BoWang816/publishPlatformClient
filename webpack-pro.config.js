@@ -4,12 +4,10 @@
  * @since 2020/3/24
  * @github https://github.com/BoWang816
  */
-
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
-const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
 const commonConfig = require('./webpack-common.config');
 
@@ -28,7 +26,7 @@ const MainConfig = {
             maxInitialRequests: Infinity,
             minSize: 0,
             cacheGroups: {
-                vendor: {
+                defaultVendors: {
                     minChunks: 1,
                     test: /[\\/]node_modules[\\/]/,
                     name: 'vendor'
@@ -48,8 +46,7 @@ const MainConfig = {
         minimizer: [
             // 压缩js
             new TerserWebpackPlugin({
-                cache: true,
-                parallel: false,
+                parallel: true,
                 terserOptions: {
                     output: {
                         comments: false
@@ -67,16 +64,6 @@ const MainConfig = {
                     minifyGradients: true
                 },
                 canPrint: true
-            }),
-
-            // 开启gzip压缩
-            new CompressionWebpackPlugin({
-                filename: '[path].gz',
-                test: /\.js$|\.html$|\.css/, // 匹配文件名
-                threshold: 10240, // 对超过10kb的数据进行压缩
-                deleteOriginalAssets: false, // 是否删除原文件
-                algorithm: 'gzip',
-                minRatio: 0.8
             })
         ]
     }

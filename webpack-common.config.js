@@ -13,7 +13,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
 const HappyPack = require('happypack');
-
+// const cdnVersion = require('./cdn-version.json');
 const resolve = dir => path.resolve(__dirname, dir);
 
 module.exports = () => {

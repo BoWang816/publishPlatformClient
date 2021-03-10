@@ -1,0 +1,11 @@
+{
+	"react": "16.13.1",
+	"reactDom": "16.13.1",
+	"reactRouterDom": "5.2.0",
+	"classnames": "2.2.6",
+	"mobx": "5.15.4",
+	"mobxReactLite": "2.0.7",
+	"mobxReact": "6.2.2",
+	"echarts": "4.5.0",
+	"axios": ""
+}
