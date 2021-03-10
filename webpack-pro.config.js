@@ -5,13 +5,13 @@
  * @github https://github.com/BoWang816
  */
 const { merge } = require('webpack-merge');
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+// const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 const commonConfig = require('./webpack-common.config');
 
-const smp = new SpeedMeasurePlugin();
+// const smp = new SpeedMeasurePlugin();
 
 const MainConfig = {
     mode: 'production',
@@ -70,4 +70,5 @@ const MainConfig = {
 };
 
 // smp.wrap loader所用打包时间
-module.exports = smp.wrap(merge(MainConfig, commonConfig(true)));
+// module.exports = smp.wrap(merge(MainConfig, commonConfig(true)));
+module.exports = merge(MainConfig, commonConfig(true));
