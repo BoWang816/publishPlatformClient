@@ -1,0 +1,81 @@
+{
+    "extends": ["airbnb", "prettier", "eslint:recommended"],
+    "plugins": ["prettier"],
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "./webpack-common.config.js"
+            }
+        }
+    },
+    "rules": {
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto",
+                "trailingComma": "none"
+            }
+        ],
+        "react/prefer-stateless-function": "off",
+        "react/destructuring-assignment": 0,
+        "react/jsx-props-no-spreading": 0,
+        "react/prop-types": 0,
+        "no-underscore-dangle": 0,
+        "import/imports-first": ["error", "absolute-first"],
+        "import/newline-after-import": "error",
+        "import/prefer-default-export": 0,
+        "import/no-extraneous-dependencies": 0,
+        "import/no-dynamic-require": 0,
+        "react/forbid-prop-types": 0,
+        "react/no-danger": "off",
+        "react/no-deprecated": "off",
+        "no-console": "off",
+        "no-param-reassign": [
+            "error",
+            {
+                "props": false
+            }
+        ],
+        "jsx-a11y/anchor-is-valid": 0,
+        "jsx-a11y/click-events-have-key-events": 0,
+        "jsx-a11y/no-static-element-interactions": 0,
+        "jsx-a11y/no-noninteractive-element-interactions": "warn",
+        "jsx-a11y/no-interactive-element-to-noninteractive-role": "off",
+        "template-curly-spacing": ["error", "never"],
+        "object-curly-spacing": [
+            "error",
+            "always",
+            {
+                "objectsInObjects": true,
+                "arraysInObjects": true
+            }
+        ],
+        "import/extensions": [2, "never", { "web.js": "never", "json": "never" }],
+        "import/no-unresolved": [2, { "ignore": ["antd"] }],
+        "no-plusplus": 0,
+        "jsx-a11y/label-has-for": 0,
+        "quotes": ["error", "single"],
+        "global-require": 0,
+        "jsx-quotes": ["error", "prefer-double"],
+        "space-infix-ops": ["error"],
+        "react/sort-comp": "off",
+        "jsx-a11y/label-has-associated-control": "off"
+    },
+    "globals": {
+        "window": true,
+        "document": true,
+        "localStorage": true,
+        "FormData": true,
+        "FileReader": true,
+        "Blob": true,
+        "XMLHttpRequest": true,
+        "navigator": true
+    },
+    "parser": "babel-eslint"
+}

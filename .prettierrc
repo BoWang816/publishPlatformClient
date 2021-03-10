@@ -1,0 +1,20 @@
+{
+	"extends": [
+		"plugin:prettier/recommended",
+		"prettier/react",
+		"prettier/standard"
+	],
+    "printWidth": 120,
+    "tabWidth": 4,
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "htmlWhitespaceSensitivity": "ignore",
+    "jsxBracketSameLine": true,
+    "singleQuote": true,
+	"useTabs": false,
+	"semi": true,
+	"Semicolons": true,
+	"endOfLine": "auto",
+	"BracketSpacing": true,
+	"proseWrap": "preserve"
+}
